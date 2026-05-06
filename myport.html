@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aditya Sawant | CS Engineer Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Plus+Jakarta+Sans:wght@300;500;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #05070a;           /* Void Black */
+            --glass: rgba(10, 15, 25, 0.8); 
+            --accent: #39ff14;       /* Terminal Green */
+            --text-main: #e0e6ed;
+            --text-dim: #6272a4;
+            --border: rgba(57, 255, 20, 0.2);
+            --font-mono: 'Fira Code', monospace;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* --- CODE GRID BACKGROUND --- */
+        body::before {
+            content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background-image: 
+                linear-gradient(var(--border) 1px, transparent 1px),
+                linear-gradient(90deg, var(--border) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: -1;
+            opacity: 0.1;
+        }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 5%; }
+
+        /* --- NAVIGATION --- */
+        nav {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 25px 80px; position: sticky; top: 0; z-index: 1000;
+            background: rgba(5, 7, 10, 0.9); border-bottom: 1px solid var(--border);
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-logo { font-family: var(--font-mono); color: var(--accent); font-weight: 800; }
+
+        .resume-link {
+            text-decoration: none; color: var(--accent); font-family: var(--font-mono);
+            font-size: 13px; border: 1px solid var(--accent);
+            padding: 8px 20px; transition: 0.3s;
+        }
+
+        .resume-link:hover { background: var(--accent); color: var(--bg); box-shadow: 0 0 15px var(--accent); }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px;
+            padding: 100px 0; align-items: center;
+        }
+
+        .hero-image-wrapper { position: relative; border: 1px solid var(--accent); padding: 10px; }
+        .hero-image {
+            width: 100%; height: 450px; object-fit: cover;
+            filter: grayscale(1) contrast(1.2);
+        }
+
+        .name-overlay {
+            position: absolute; bottom: -30px; left: -20px;
+            font-size: 4.5rem; font-weight: 800; line-height: 0.9;
+            color: var(--bg); -webkit-text-stroke: 1px var(--accent);
+            text-transform: uppercase; z-index: 2;
+        }
+
+        .hero-content h2 { font-family: var(--font-mono); color: var(--accent); font-size: 14px; margin-bottom: 15px; }
+        .hero-content h1 { font-size: 3.5rem; font-weight: 800; margin-bottom: 20px; line-height: 1.1; }
+
+        /* --- GLASS CARDS --- */
+        .section-label { font-family: var(--font-mono); color: var(--accent); margin: 60px 0 30px; display: block; }
+        
+        .glass-card {
+            background: var(--glass); border: 1px solid var(--border);
+            padding: 40px; border-radius: 4px; margin-bottom: 30px;
+            transition: 0.3s; position: relative; overflow: hidden;
+        }
+
+        .glass-card:hover { border-color: var(--accent); background: rgba(57, 255, 20, 0.05); }
+
+        /* --- PROJECT BLOCKS --- */
+        .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        
+        .tag { font-family: var(--font-mono); font-size: 10px; background: rgba(57, 255, 20, 0.1); 
+               color: var(--accent); padding: 4px 10px; border-radius: 2px; margin-right: 8px; }
+
+        .tech-table { width: 100%; border-collapse: collapse; margin-top: 20px; font-family: var(--font-mono); }
+        .tech-table td { padding: 15px; border: 1px solid var(--border); color: var(--text-dim); }
+        .tech-table strong { color: var(--accent); }
+
+        footer { padding: 80px 0; text-align: center; font-family: var(--font-mono); border-top: 1px solid var(--border); margin-top: 50px;}
+
+        @media (max-width: 900px) {
+            .hero { grid-template-columns: 1fr; }
+            .name-overlay { font-size: 3rem; }
+            nav { padding: 20px; }
+            .project-row-inner { grid-template-columns: 1fr !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-logo">root@aditya_sawant:~$</div>
+        <a href="resume.pdf" class="resume-link">./DOWNLOAD_CV</a>
+    </nav>
+
+    <div class="container">
+        
+        <!-- HERO -->
+        <section class="hero">
+            <div class="hero-image-wrapper">
+                <img src="C:\Users\Aditya Sawant\OneDrive\Desktop\CT\AS11.jpeg" alt="Aditya Sawant" class="hero-image">
+                <div class="name-overlay">ADITYA<br>SAWANT</div>
+            </div>
+            <div class="hero-content">
+                <h2>// COMPUTER SCIENCE ENGINEERING '26</h2>
+                <h1>Optimizing Reality through Code.</h1>
+                <p style="color: var(--text-dim); font-size: 1.1rem;">
+                    Specializing in **Full-Stack Architecture** and **System Security**. I build scalable digital solutions that solve physical-world inefficiencies.
+                </p>
+                
+                <table class="tech-table">
+                    <tr>
+                        <td><strong>Languages</strong><br>C++, Python, JS</td>
+                        <td><strong>Stack</strong><br>MERN, SQL, AWS</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+        <!-- COMPETENCIES -->
+        <span class="section-label">> cat core_competencies.txt</span>
+        <div class="project-grid">
+            <div class="glass-card">
+                <h3 style="color: var(--accent); margin-bottom: 10px;">Algorithmic Logic</h3>
+                <p style="color: var(--text-dim);">Deep understanding of Data Structures and Algorithms to ensure O(n) efficiency in high-traffic applications.</p>
+            </div>
+            <div class="glass-card">
+                <h3 style="color: var(--accent); margin-bottom: 10px;">Full-Stack Mindset</h3>
+                <p style="color: var(--text-dim);">Bridging the gap between intuitive Frontend UI and robust, secure Backend schemas.</p>
+            </div>
+        </div>
+
+        <!-- MAJOR PROJECTS -->
+        <span class="section-label">> ls ./major_projects</span>
+        
+        <!-- Parking Project -->
+        <div class="glass-card">
+            <div class="project-row-inner" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;">
+                <div>
+                    <span class="tag">WEB APP</span><span class="tag">DATABASE</span>
+                    <h3 style="font-size: 1.8rem; margin: 15px 0;">Parking Space Management</h3>
+                    <p style="color: var(--text-dim); margin-bottom: 20px;">
+                        A full-stack solution designed to automate urban parking. Features real-time slot tracking, dynamic pricing algorithms, and user authentication.
+                    </p>
+                    <p style="font-family: var(--font-mono); font-size: 12px; color: var(--accent);">
+                        Stack: React.js, Node.js, MongoDB
+                    </p>
+                </div>
+                <div style="background: #111; height: 250px; border: 1px solid var(--border); overflow: hidden;">
+                    <img src="C:\Users\Aditya Sawant\Downloads\DT.jpeg" style="width:100%; height:100%; object-fit:cover; opacity: 0.7;" alt="Parking System">
+                </div>
+            </div>
+        </div>
+
+        <!-- Security Project -->
+        <div class="glass-card">
+            <div class="project-row-inner" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; direction: rtl;">
+                <div style="direction: ltr;">
+                    <span class="tag">CYBER-PHYSICAL</span><span class="tag">PYTHON</span>
+                    <h3 style="font-size: 1.8rem; margin: 15px 0;">Smart House Security</h3>
+                    <p style="color: var(--text-dim); margin-bottom: 20px;">
+                        An integrated security suite combining biometric authentication with real-time intrusion alerts. Focused on data encryption between sensors and the central server.
+                    </p>
+                    <p style="font-family: var(--font-mono); font-size: 12px; color: var(--accent);">
+                        Focus: Encryption, Socket Programming, IoT
+                    </p>
+                </div>
+                <div style="background: #111; height: 250px; border: 1px solid var(--border); overflow: hidden;">
+                    <img src="C:\Users\Aditya Sawant\Downloads\WhatsApp Image 2026-05-04 at 9.06.33 PM.jpeg" style="width:100%; height:100%; object-fit:cover; opacity: 0.7;" alt="Security System">
+                </div>
+            </div>
+        </div>
+
+        <!-- CERTIFICATES (4 Slots) -->
+        <span class="section-label">> sudo get credentials --all</span>
+        <div class="project-grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
+            
+            <div class="glass-card" style="padding: 15px; display: flex; flex-direction: column; align-items: center;">
+                <div style="width: 100%; height: 160px; background: #000; border: 1px solid var(--border); overflow: hidden; margin-bottom: 15px;">
+                    <img src="C:\Users\Aditya Sawant\Downloads\WhatsApp Image 2026-05-04 at 9.20.24 PM (1).jpeg" alt="Cert 1" style="width:100%; height:100%; object-fit: contain; transition: 0.4s;" onmouseover="this.style.transform='scale(1.2)';" onmouseout="this.style.transform='scale(1)';">
+                </div>
+                <div style="font-family: var(--font-mono); font-size: 11px; color: var(--accent); text-align: center;">[01]Anthropic</div>
+            </div>
+
+            <div class="glass-card" style="padding: 15px; display: flex; flex-direction: column; align-items: center;">
+                <div style="width: 100%; height: 160px; background: #000; border: 1px solid var(--border); overflow: hidden; margin-bottom: 15px;">
+                    <img src="C:\Users\Aditya Sawant\Downloads\WhatsApp Image 2026-05-04 at 9.20.24 PM (2).jpeg" alt="Cert 2" style="width:100%; height:100%; object-fit: contain; transition: 0.4s;" onmouseover="this.style.transform='scale(1.2)';" onmouseout="this.style.transform='scale(1)';">
+                </div>
+                <div style="font-family: var(--font-mono); font-size: 11px; color: var(--accent); text-align: center;">[02]Anthropic</div>
+            </div>
+
+            <div class="glass-card" style="padding: 15px; display: flex; flex-direction: column; align-items: center;">
+                <div style="width: 100%; height: 160px; background: #000; border: 1px solid var(--border); overflow: hidden; margin-bottom: 15px;">
+                    <img src="C:\Users\Aditya Sawant\Downloads\WhatsApp Image 2026-05-04 at 9.20.24 PM.jpeg" alt="Cert 3" style="width:100%; height:100%; object-fit: contain; transition: 0.4s;" onmouseover="this.style.transform='scale(1.2)';" onmouseout="this.style.transform='scale(1)';">
+                </div>
+                <div style="font-family: var(--font-mono); font-size: 11px; color: var(--accent); text-align: center;">[03]Anthropic</div>
+            </div>
+
+            <div class="glass-card" style="padding: 15px; display: flex; flex-direction: column; align-items: center;">
+                <div style="width: 100%; height: 160px; background: #000; border: 1px solid var(--border); overflow: hidden; margin-bottom: 15px;">
+                    <img src="C:\Users\Aditya Sawant\Downloads\WhatsApp Image 2026-05-04 at 9.20.25 PM.jpeg" alt="Cert 4" style="width:100%; height:100%; object-fit: contain; transition: 0.4s;" onmouseover="this.style.transform='scale(1.2)';" onmouseout="this.style.transform='scale(1)';">
+                </div>
+                <div style="font-family: var(--font-mono); font-size: 11px; color: var(--accent); text-align: center;">[04]Anthropic</div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p style="color: var(--accent); margin-bottom: 10px;">// END OF LINE</p>
+        <h2 style="font-size: 2rem; margin-bottom: 20px;">Let's Connect.</h2>
+        <a href="mailto:adisawant8180@gmail.com" style="color: var(--text-dim); text-decoration: none; border: 1px solid var(--border); padding: 10px 20px; font-family: var(--font-mono);">
+            echo "adisawant8180@email.com"
+        </a>
+    </footer>
+
+</body>
+</html>
